@@ -8,6 +8,6 @@ in writeShellApplication {
   name = "days";
   runtimeInputs = [ neovim ];
   text = ''
-    find ~/journal/"$(date +'%Y')"/* -mtime -180 | xargs nvim --cmd "source ${daysConfig}" -O
+    find ~/journal/"$(date +'%Y')"/* -mtime -180 | xargs nvim --cmd "source ${daysConfig}" --cmd "set fillchars+=eob:\ " -O
   '';
 }
